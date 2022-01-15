@@ -14,7 +14,9 @@ int main()
     // read the name
     string name;
     cin >> name;
-    const int pad = 1;
+    cout << "What pad do you want?: ";
+    int pad;
+    cin >> pad;
     // total number of rows to write
     const int rows = pad * 2 + 3;
 
