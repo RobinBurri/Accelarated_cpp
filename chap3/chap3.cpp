@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using std::cin;     using std::setprecision;
 using std::cout;     using std::string;
@@ -34,11 +35,31 @@ int main()
 		count++;
 		sum += x;
     }
+	// VECTOR SIZE
+	vector<double>::size_type size;
+	vector<double>::size_type mid;
+	size = homework.size();
+	mid = size/2;
+	double median;
+	median = size % 2 == 0 ? (homework[mid] + homework[mid -1]) / 2 : homework[mid];
+	 if (size == 0)
+	 {
+		 cout << "You must enter your grades. "
+		 		"Please try again." << endl;
+		return 1;
+	 }
+	 sort(homework.begin(), homework.end());
+
 	//  // write the result
     streamsize prec = cout.precision();
     // cout
     cout 	<< "Your final grade is " << setprecision(3)
 			<< 0.2 * midterm_grade + 0.4 * final_grade + 0.4 * sum / count
 			<< setprecision(prec) << endl;
+    cout 	<< "Your median score is " << setprecision(3)
+			<< 0.2 * midterm_grade + 0.4 * final_grade + 0.4 * median
+			<< setprecision(prec) << endl;
+
+	cout << median << endl;
 }
 
