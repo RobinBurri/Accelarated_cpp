@@ -20,7 +20,12 @@ int main()
 	while (cin >> input)
 		string_collection.push_back(input);
 	int size = string_collection.size();
+	for (int i = 0; i < size; i++)
+	{
+		cout << string_collection[i] + ' ';
+	}
+		cout << endl;
 
-	cout << size << endl;
+	
 
 }
